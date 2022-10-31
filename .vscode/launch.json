@@ -1,0 +1,20 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "PowerShell Launch Current File",
+            "type": "PowerShell",
+            "request": "launch",
+            // script is sourced with . command, i.e. PS > . "script"
+            // all script:variables pollute the terminal session scope
+            // to prevent this, add {} nope block, so it will be PS > . { {} && "script" }
+            "script": "{} && ${file}",
+            // args cant be used in this case
+            "args": [],
+            "cwd": "${cwd}",
+        }
+    ]
+}
